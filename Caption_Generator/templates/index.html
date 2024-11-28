@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Caption Generator</title>
+  </head>
+  <body>
+    <h1>Caption Generator</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*">
+      <button type="submit">Generate Caption</button>
+    </form>
+
+    {% if image %}
+    <div id="image-container">
+      <h3>Uploaded Image</h3>
+      <img src="{{ url_for('static', filename=image) }}" alt="Uploaded Image" width="400">
+      <h3>Generated Caption:</h3>
+      <p>{{ caption }}</p>
+    </div>
+    {% endif %}
+
+    <script>
+      // You can add JavaScript here if needed for additional functionality
+    </script>
+  </body>
+</html>
